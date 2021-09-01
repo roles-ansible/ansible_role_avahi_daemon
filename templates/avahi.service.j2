@@ -1,0 +1,12 @@
+<?xml version="1.0" standalone='no'?>
+<!DOCTYPE service-group SYSTEM "avahi-service.dtd">
+<service-group>
+  <name replace-wildcards="yes">{{ item.service | upper }} server at %h</name>
+  <service>
+    <type>_{{ item.service | lower }}._tcp</type>
+    <port>{{ item.port | string }}</port>
+{% if item.extra is defined %}
+    {{ item.extra }}
+{% endif %}
+  </service>
+</service-group>

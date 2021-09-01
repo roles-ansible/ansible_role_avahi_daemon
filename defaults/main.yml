@@ -1,10 +1,16 @@
 ---
-avahi_packages:
-  - 'avahi-daemon'
-  - 'avahi-utils'
-  #- 'avahi-discover'
-  #- 'mdns-scan'
-
+avahi_services:
+  - service: 'SSH'
+    port: 22
+  # - service: 'NFS'
+  #   port: 2049
+  #   extra: '<txt-record>path=/path/to/nfsexport</txt-record>'
+  # - service: 'FTP'
+  #   port: '21'
+  #   extra: |
+  #     <txt-record>path=/ftppath</txt-record>
+  #     <txt-record>u=ftpuser</txt-record>
+  #     <txt-record>p=ftppass</txt-record>
 
 # should we do a version check? (recomended)
 submodules_versioncheck: false

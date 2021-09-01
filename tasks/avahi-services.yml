@@ -1,0 +1,11 @@
+---
+- name: Copy configured avahi services
+  ansible.builtin.template:
+    src: 'templates/avahi.service.j2'
+    dest: "/etc/avahi/services/{{ item.service | lower }}.service"
+    owner: root
+    group: root
+    mode: 'u=rw,g=r,o=r'
+  notify:
+    - systemctl restart avahi-daemon.service
+  with_items: "{{ avahi_services }}"
