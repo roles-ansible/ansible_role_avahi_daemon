@@ -1,12 +1,18 @@
 <?xml version="1.0" standalone='no'?>
 <!DOCTYPE service-group SYSTEM "avahi-service.dtd">
 <service-group>
-  <name replace-wildcards="yes">{{ item.service | upper }} server at %h</name>
-  <service>
+  <name replace-wildcards="yes">
+    {%- if item.name is defined -%}
+      {{- item.name -}}
+    {%- else -%}
+      {{ item.service | upper }} server at %h
+    {%- endif -%}
+  </name>
+  <service protocol="{{ item.protocol | default("any") }}">
     <type>_{{ item.service | lower }}._tcp</type>
-    <port>{{ item.port | string }}</port>
-{% if item.extra is defined %}
-    {{ item.extra }}
-{% endif %}
+    <port>{{ item.port | int }}</port>
+{% for record in item.txt_records | default([]) %}
+    <txt-record>{{ record }}</txt-record>
+{% endfor %}
   </service>
 </service-group>

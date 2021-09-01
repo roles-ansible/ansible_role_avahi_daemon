@@ -16,6 +16,6 @@ galaxy_info:
   galaxy_tags:
     - avahi
     - daemon
-    - avahi_daemon
     - mdns
+    - bonjour
 dependencies: []

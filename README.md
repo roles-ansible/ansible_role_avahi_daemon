@@ -5,6 +5,39 @@
 ===========================
 Ansible role to install the avahi_daemon and optionally announce some services.
 
+ Variables
+-----------
+In the ``avahi_services`` variable you can define the services you want to announce.
+Here is a list with available parameters:
+ + ``service``: Service Name *(HTTP/SSH/...)* ***(required)***
+ + ``port``: Service Port ***(required)***
+ - ``name``: optional name to announce the Service
+ - ``protocol``: ``any``/``ipv6``/``ipv4``
+ - ``txt_records``: an array of txt records
+
+
+Example:
+```yaml
+---
+avahi_services:
+  - service: 'SSH'
+    port: 22
+    protocol: 'any'
+  - service: 'NFS'
+    name: 'Filesharing Host %h'
+    port: 2049
+    protocol: 'ipv6'
+    txt_records:
+      - 'path=/path/to/nfsexport'
+  - service: 'FTP'
+    port: '21'
+    protocol: 'ipv4'
+    txt_records:
+      - 'path=/ftppath'
+      - 'u=ftpuser'
+      - 'p=ftppass'
+```
+
  Netfilter rules
 ---------------
 Avahi is using multicast to announce services.

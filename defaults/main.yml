@@ -2,15 +2,20 @@
 avahi_services:
   - service: 'SSH'
     port: 22
-  # - service: 'NFS'
-  #   port: 2049
-  #   extra: '<txt-record>path=/path/to/nfsexport</txt-record>'
-  # - service: 'FTP'
-  #   port: '21'
-  #   extra: |
-  #     <txt-record>path=/ftppath</txt-record>
-  #     <txt-record>u=ftpuser</txt-record>
-  #     <txt-record>p=ftppass</txt-record>
+    protocol: 'any'
+# - service: 'NFS'
+#   name: 'Filesharing Host %h'
+#   port: 2049
+#   protocol: 'ipv6'
+#   txt_records:
+#     - 'path=/path/to/nfsexport'
+# - service: 'FTP'
+#   port: '21'
+#   protocol: 'ipv4'
+#   txt_records:
+#     - 'path=/ftppath'
+#     - 'u=ftpuser'
+#     - 'p=ftppass'
 
 # should we do a version check? (recomended)
 submodules_versioncheck: false
