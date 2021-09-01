@@ -12,9 +12,5 @@
 - name: install avahi requirements
   ansible.builtin.include_tasks: install.yml
 
-- debug:
-    msg: "{{ item }}"
-  with_items: "{{ avahi_services }}"
-
 - name: optionally announce avahi services
-  ansible.builtin.include_tasks: avahi-services.yml
+  ansible.builtin.include_tasks: avahi_services.yml
