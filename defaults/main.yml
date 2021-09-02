@@ -3,6 +3,7 @@ avahi_services:
   - service: 'SSH'
     port: 22
     protocol: 'any'
+    transport: 'tcp'
 # - service: 'NFS'
 #   name: 'Filesharing Host %h'
 #   port: 2049

@@ -9,7 +9,7 @@
     {%- endif -%}
   </name>
   <service protocol="{{ item.protocol | default("any") }}">
-    <type>_{{ item.service | lower }}._tcp</type>
+    <type>_{{ item.service | lower }}._{{ item.transport | default("tcp") | lower }}</type>
     <port>{{ item.port | int }}</port>
 {% for record in item.txt_records | default([]) %}
     <txt-record>{{ record }}</txt-record>
