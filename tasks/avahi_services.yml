@@ -8,4 +8,4 @@
     mode: 'u=rw,g=r,o=r'
   notify:
     - systemctl restart avahi-daemon.service
-  with_items: "{{ avahi_services }}"
+  with_items: "{{ avahi_daemon__services }}"

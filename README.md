@@ -7,7 +7,7 @@ Ansible role to install the avahi_daemon and optionally announce some services.
 
  Variables
 -----------
-In the ``avahi_services`` variable you can define the services you want to announce.
+In the ``avahi_daemon__services`` variable you can define the services you want to announce.
 Here is a list with available parameters:
  + ``service``: Service Name *(HTTP/SSH/...)* ***(required)***
  + ``port``: Service Port ***(required)***
@@ -20,7 +20,7 @@ Here is a list with available parameters:
 Example:
 ```yaml
 ---
-avahi_services:
+avahi_daemon__services:
   - service: 'SSH'
     port: 22
     protocol: 'any'
@@ -55,13 +55,14 @@ daddr ff02::fb proto udp dport 5353 ACCEPT;
 
 Links
 -----
-
 * http://dns-sd.org/
 * http://www.multicastdns.org/
-
-* https://kodi.wiki/view/Avahi_Zeroconf#Sample_service_configurations
-
-* https://www.avahi.org/
-* https://github.com/lathiat/avahi
-
+* https://www.ietf.org/rfc/rfc6762.txt
 * http://www.dns-sd.org/ServiceTypes.html
+
+- https://www.avahi.org/
+- https://github.com/lathiat/avahi
+
++ https://github.com/lathiat/avahi/blob/master/avahi-daemon/avahi-service.dtd
+
+* https://github.com/lathiat/nss-mdns

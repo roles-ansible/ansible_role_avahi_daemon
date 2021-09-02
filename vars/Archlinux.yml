@@ -1,3 +1,3 @@
 ---
-avahi_packages:
+avahi_daemon__packages:
   - avahi

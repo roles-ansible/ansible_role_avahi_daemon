@@ -1,5 +1,7 @@
 ---
-avahi_packages:
+avahi_daemon__packages:
   - 'avahi-daemon'
-  - 'avahi-utils'
   - 'avahi-discover'
+  - 'avahi-utils'
+  - 'libnss-mdns'
+# - 'mdns-scan'
