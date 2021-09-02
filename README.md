@@ -14,6 +14,7 @@ Here is a list with available parameters:
  - ``name``: optional name to announce the Service
  - ``protocol``: ``any``/``ipv6``/``ipv4``
  - ``txt_records``: an array of txt records
+ - ``transport``: Transport Protokoll (``tcp``/``udp``)
 
 
 Example:
@@ -23,6 +24,7 @@ avahi_services:
   - service: 'SSH'
     port: 22
     protocol: 'any'
+    transport: 'tcp'
   - service: 'NFS'
     name: 'Filesharing Host %h'
     port: 2049
