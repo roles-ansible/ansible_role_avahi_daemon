@@ -1,5 +1,6 @@
 ---
 - name: Copy configured avahi services
+  become: true
   ansible.builtin.template:
     src: 'templates/avahi.service.j2'
     dest: "/etc/avahi/services/{{ item.service | lower }}.service"
