@@ -1,5 +1,5 @@
 ---
-avahi_services:
+avahi_daemon__services:
   - service: 'SSH'
     port: 22
     protocol: 'any'

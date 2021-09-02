@@ -10,5 +10,5 @@
 - name: install avahi packages
   become: true
   ansible.builtin.package:
-    name: "{{ avahi_packages }}"
+    name: "{{ avahi_daemon__packages }}"
     state: present
