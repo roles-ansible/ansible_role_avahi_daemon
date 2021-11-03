@@ -1,4 +1,16 @@
 ---
+- name: mkdir /etc/avahi/services/
+  become: true
+  ansible.builtin.file:
+    owner: root
+    group: root
+    mode: '0755'
+    state: directory
+    path: "{{ item }}"
+  with_items:
+    - '/etc/avahi'
+    - '/etc/avahi/services'
+
 - name: Copy configured avahi services
   become: true
   ansible.builtin.template:
