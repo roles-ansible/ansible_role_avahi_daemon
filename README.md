@@ -58,7 +58,7 @@ daddr ff02::fb proto udp dport 5353 ACCEPT;
 --------------------
 This role is part of the ``l3d.avahi`` Ansible Collection.
 
-[![collection l3d.avahi](https://ansible.l3d.space/svg/l3d.avahi_ansible-collection_collection.svg)](https://galaxy.ansible.com/l3d/avahi)
+[![collection l3d.avahi](https://ansible.l3d.space/svg/l3d.avahi_ansible-collection_collection.svg)](https://galaxy.ansible.com/ui/repo/published/l3d/avahi/)
 [![Maintainance](https://ansible.l3d.space/svg/l3d.avahi_maintainance_collection.svg)](https://ansible.l3d.space/#l3d.avahi)
 [![License](https://ansible.l3d.space/svg/l3d.avahi_license_collection.svg)](LICENSE)
 
