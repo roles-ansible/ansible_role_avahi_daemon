@@ -1,5 +1,5 @@
 ---
-- name: mkdir /etc/avahi/services/
+- name: Create Directory /etc/avahi/services/
   become: true
   ansible.builtin.file:
     owner: root
@@ -10,6 +10,8 @@
   with_items:
     - '/etc/avahi'
     - '/etc/avahi/services'
+  notify:
+    - Run systemctl restart avahi-daemon.service
 
 - name: Copy configured avahi services
   become: true
@@ -20,5 +22,5 @@
     group: root
     mode: 'u=rw,g=r,o=r'
   notify:
-    - systemctl restart avahi-daemon.service
+    - Run systemctl restart avahi-daemon.service
   with_items: "{{ avahi_daemon__services }}"

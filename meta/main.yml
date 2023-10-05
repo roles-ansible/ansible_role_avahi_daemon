@@ -1,21 +1,23 @@
 ---
 galaxy_info:
   role_name: avahi_daemon
-  author: do1jlr
+  author: l3d
+  namespace: l3d
   description: Install avahi and optionally announce avahi services
   license: "MIT"
-  min_ansible_version: 2.11
+  min_ansible_version: "2.12"
   github_branch: main
   platforms:
-    - name: Archlinux
-      versions: all
     - name: Debian
-      versions: all
+      versions: ['all']
+    - name: ArchLinux
+      versions: ['all']
     - name: Ubuntu
-      versions: all
+      versions: ['all']
   galaxy_tags:
     - avahi
     - daemon
     - mdns
     - bonjour
+    - linux
 dependencies: []

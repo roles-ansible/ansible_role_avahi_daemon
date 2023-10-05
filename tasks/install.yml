@@ -7,8 +7,10 @@
   when:
     - ansible_pkg_mgr == "apt"
 
-- name: install avahi packages
+- name: Install avahi packages
   become: true
   ansible.builtin.package:
     name: "{{ avahi_daemon__packages }}"
     state: present
+  notify:
+    - Run systemctl restart avahi-daemon.service
