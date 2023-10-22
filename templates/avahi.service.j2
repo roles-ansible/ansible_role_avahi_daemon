@@ -2,11 +2,11 @@
 <!DOCTYPE service-group SYSTEM "avahi-service.dtd">
 <service-group>
   <name replace-wildcards="yes">
-    {%- if item.name is defined -%}
-      {{- item.name -}}
-    {%- else -%}
-      {{ item.service | upper }} server at %h
-    {%- endif -%}
+{% if item.name is defined %}
+    {{ item.name }}
+{% else %}
+    {{ item.service | upper }} server at %h
+{% endif %}
   </name>
   <service protocol="{{ item.protocol | default("any") }}">
     <type>_{{ item.service | lower }}._{{ item.transport | default("tcp") | lower }}</type>
