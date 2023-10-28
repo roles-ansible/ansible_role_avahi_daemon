@@ -7,7 +7,7 @@
     mode: '0755'
     state: directory
     path: "{{ item }}"
-  with_items:
+  loop:
     - '/etc/avahi'
     - '/etc/avahi/services'
   notify:
@@ -21,6 +21,6 @@
     owner: root
     group: root
     mode: 'u=rw,g=r,o=r'
+  loop: "{{ avahi_daemon__services }}"
   notify:
     - Run systemctl restart avahi-daemon.service
-  with_items: "{{ avahi_daemon__services }}"

@@ -1,4 +1,4 @@
 ---
 # versionscheck
-playbook_version_number: 9
+playbook_version_number: 10
 playbook_version_path: 'do1jlr.avahi_daemon.version'
