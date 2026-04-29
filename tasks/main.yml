@@ -1,7 +1,7 @@
 ---
 - name: Run optional versionscheck
   ansible.builtin.include_tasks:
-    file: versioncheck.yml
+    file: 'versioncheck.yml'
   when: submodules_versioncheck | bool
 
 - name: Gather os specific variables
@@ -13,8 +13,11 @@
 
 - name: Install avahi requirements
   ansible.builtin.include_tasks:
-    file: install.yml
+    file: 'install.yml'
 
 - name: Optionally announce avahi services
   ansible.builtin.include_tasks:
-    file: avahi_services.yml
+    file: 'avahi_services.yml'
+- name: Make sure systemd is running
+  ansible.builtin.include_tasks:
+    file: 'systemd.yml'
